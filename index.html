@@ -195,16 +195,25 @@ body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 @media(max-width:768px){
   #s-intro .intro-title{font-size:clamp(58px,17vw,90px) !important;line-height:0.92;}
   :root{--pad:20px;--pad-top:52px;}
-  .slide{padding:20px;padding-top:52px;padding-bottom:80px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;align-items:stretch;justify-content:flex-start;}
-  .slide-hl{font-size:clamp(34px,10vw,54px) !important;line-height:0.95;margin-bottom:12px;}
-  .slide-body{font-size:15px;line-height:1.75;margin-bottom:14px;max-width:100%;}
+  .slide{padding:24px 20px 92px;padding-top:calc(46px + env(safe-area-inset-top));overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;align-items:stretch;justify-content:flex-start;}
+  .slide-tag{font-size:9px;letter-spacing:0.26em;margin-bottom:12px;}
+  .slide-hl{font-size:clamp(36px,12vw,58px) !important;line-height:0.94;margin-bottom:14px;}
+  .slide-body{font-size:16px;line-height:1.68;margin-bottom:18px;max-width:100%;color:rgba(240,236,255,0.92);}
   .img-strip{display:none !important;}
-  .mobile-photos{display:flex;}
+  .mobile-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:clamp(18px,5vh,36px);padding-top:0;}
+  .mobile-photos .mp-img{border-radius:10px;aspect-ratio:4/5;box-shadow:0 16px 40px rgba(0,0,0,0.28),0 0 0 1px rgba(240,236,255,0.08);}
+  .mobile-photos .mp-img img{filter:brightness(0.86) saturate(0.98);object-position:center;}
+  .mobile-photos .mp-img .cap{display:none !important;}
+  .img-thumb .cap,.g-cell .cap{display:none !important;}
   .deco-num{display:none;}
   #nav-arrows{display:none;}
   #swipe-hint{display:flex;}
+  #counter{bottom:calc(18px + env(safe-area-inset-bottom));right:20px;}
+  #music-bar{bottom:calc(16px + env(safe-area-inset-bottom));left:20px;}
   #music-label{display:none;}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,1fr);gap:3px;position:relative;height:100%;inset:0;}
+  #lb-cap{display:none;}
+  #lb-img{max-width:94vw;max-height:72vh;border-radius:10px;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,minmax(160px,1fr));gap:4px;position:relative;height:100%;inset:0;}
   .reasons-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
   .reason-card{padding:12px 14px;}
   .scroll-hint{bottom:18px;left:20px;}
@@ -380,9 +389,13 @@ body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
       <div class="img-thumb"><img src="assets/img/foto-10.jpeg" alt="musica" loading="lazy"/><span class="cap">Nuestra música 🎵</span></div>
       <div class="img-thumb"><img src="assets/img/foto-11.jpeg" alt="cancion" loading="lazy"/><span class="cap">Lado Frágil 💙</span></div>
     </div>
+    <div class="mobile-photos">
+      <div class="mp-img"><img src="assets/img/foto-10.jpeg" alt="musica" loading="lazy"/><span class="cap">Nuestra música 🎵</span></div>
+      <div class="mp-img"><img src="assets/img/foto-11.jpeg" alt="cancion" loading="lazy"/><span class="cap">Lado Frágil 💙</span></div>
+    </div>
   </section>
 
-  <!-- SLIDE 6 -->"assets/img/foto-12.jpeg"
+  <!-- SLIDE 6 -->
   <section class="slide" data-s="6">
     <div class="slide-tag">05 — Lo que eres</div>
     <h2 class="slide-hl">Tu sonrisa,<br/>tu ternura,<br/><em>tu mente</em></h2>
@@ -392,6 +405,10 @@ body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
       <div class="img-thumb"><img src="assets/img/foto-12.jpeg" alt="sonrisa" loading="lazy"/><span class="cap">Tu sonrisa 🖤</span></div>
       <div class="img-thumb"><img src="assets/img/foto-13.jpeg" alt="ternura" loading="lazy"/><span class="cap">Tu ternura 💙</span></div>
       <div class="img-thumb"><img src="assets/img/foto-14.jpeg" alt="mente" loading="lazy"/><span class="cap">Tu mente 💜</span></div>
+    </div>
+    <div class="mobile-photos">
+      <div class="mp-img"><img src="assets/img/foto-12.jpeg" alt="sonrisa" loading="lazy"/><span class="cap">Tu sonrisa 🖤</span></div>
+      <div class="mp-img"><img src="assets/img/foto-13.jpeg" alt="ternura" loading="lazy"/><span class="cap">Tu ternura 💙</span></div>
     </div>
   </section>
 
